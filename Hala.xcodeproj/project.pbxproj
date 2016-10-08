@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8EE54C9CB97EE88EBFAA2D65 /* libPods-Hala.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98CBFB288CD31B95D3AB4815 /* libPods-Hala.a */; };
+		9C6130B21DA8A07C00B28D43 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6130B11DA8A07C00B28D43 /* TabBarController.swift */; };
+		9CA39A621DA8E5E4002BB85F /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA39A611DA8E5E3002BB85F /* Provider.swift */; };
+		9CA39A641DA8E8B9002BB85F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA39A631DA8E8B9002BB85F /* Profile.swift */; };
 		9CF806F51DA84C37004ADF2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF806F41DA84C37004ADF2B /* AppDelegate.swift */; };
 		9CF806F71DA84C37004ADF2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF806F61DA84C37004ADF2B /* ViewController.swift */; };
 		9CF806FA1DA84C37004ADF2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF806F81DA84C37004ADF2B /* Main.storyboard */; };
@@ -35,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D2327FE48AE65D39CF1D32B /* Pods-Hala.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hala.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hala/Pods-Hala.debug.xcconfig"; sourceTree = "<group>"; };
+		98CBFB288CD31B95D3AB4815 /* libPods-Hala.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hala.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C6130B11DA8A07C00B28D43 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		9CA39A611DA8E5E3002BB85F /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		9CA39A631DA8E8B9002BB85F /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		9CF806F11DA84C37004ADF2B /* Hala.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hala.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF806F41DA84C37004ADF2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CF806F61DA84C37004ADF2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +58,7 @@
 		9CF807131DA84C37004ADF2B /* HalaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HalaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF807171DA84C37004ADF2B /* HalaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalaUITests.swift; sourceTree = "<group>"; };
 		9CF807191DA84C37004ADF2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDCA6FB1FD8844DD84A03A01 /* Pods-Hala.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hala.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hala/Pods-Hala.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EE54C9CB97EE88EBFAA2D65 /* libPods-Hala.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0ACCFEE717282B0073D6753F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98CBFB288CD31B95D3AB4815 /* libPods-Hala.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9CF806E81DA84C37004ADF2B = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +102,8 @@
 				9CF8070B1DA84C37004ADF2B /* HalaTests */,
 				9CF807161DA84C37004ADF2B /* HalaUITests */,
 				9CF806F21DA84C37004ADF2B /* Products */,
+				BD4DB21AC7F1A51C6D0C79C2 /* Pods */,
+				0ACCFEE717282B0073D6753F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,7 +122,10 @@
 			children = (
 				9CF806F41DA84C37004ADF2B /* AppDelegate.swift */,
 				9CF806F61DA84C37004ADF2B /* ViewController.swift */,
+				9CA39A631DA8E8B9002BB85F /* Profile.swift */,
+				9CA39A611DA8E5E3002BB85F /* Provider.swift */,
 				9CF806F81DA84C37004ADF2B /* Main.storyboard */,
+				9C6130B11DA8A07C00B28D43 /* TabBarController.swift */,
 				9CF806FE1DA84C37004ADF2B /* Assets.xcassets */,
 				9CF807001DA84C37004ADF2B /* LaunchScreen.storyboard */,
 				9CF807031DA84C37004ADF2B /* Info.plist */,
@@ -128,6 +152,15 @@
 			path = HalaUITests;
 			sourceTree = "<group>";
 		};
+		BD4DB21AC7F1A51C6D0C79C2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D2327FE48AE65D39CF1D32B /* Pods-Hala.debug.xcconfig */,
+				CDCA6FB1FD8844DD84A03A01 /* Pods-Hala.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +168,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CF8071C1DA84C37004ADF2B /* Build configuration list for PBXNativeTarget "Hala" */;
 			buildPhases = (
+				6E28E6327AE9DFCBCC0E4C9A /* [CP] Check Pods Manifest.lock */,
 				9CF806ED1DA84C37004ADF2B /* Sources */,
 				9CF806EE1DA84C37004ADF2B /* Frameworks */,
 				9CF806EF1DA84C37004ADF2B /* Resources */,
+				562936582D1A0C345C24449E /* [CP] Embed Pods Frameworks */,
+				7F845D8F7AEACEB577E2EA65 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,13 +296,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		562936582D1A0C345C24449E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hala/Pods-Hala-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E28E6327AE9DFCBCC0E4C9A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7F845D8F7AEACEB577E2EA65 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hala/Pods-Hala-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9CF806ED1DA84C37004ADF2B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9CF806F71DA84C37004ADF2B /* ViewController.swift in Sources */,
+				9CA39A641DA8E8B9002BB85F /* Profile.swift in Sources */,
+				9C6130B21DA8A07C00B28D43 /* TabBarController.swift in Sources */,
 				9CF806F51DA84C37004ADF2B /* AppDelegate.swift in Sources */,
+				9CA39A621DA8E5E4002BB85F /* Provider.swift in Sources */,
 				9CF806FD1DA84C37004ADF2B /* Hala.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +427,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -389,6 +477,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -415,6 +504,7 @@
 		};
 		9CF8071D1DA84C37004ADF2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D2327FE48AE65D39CF1D32B /* Pods-Hala.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 37JQGFRVMD;
@@ -428,6 +518,7 @@
 		};
 		9CF8071E1DA84C37004ADF2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDCA6FB1FD8844DD84A03A01 /* Pods-Hala.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 37JQGFRVMD;
@@ -516,6 +607,7 @@
 				9CF8071E1DA84C37004ADF2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9CF8071F1DA84C37004ADF2B /* Build configuration list for PBXNativeTarget "HalaTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +616,7 @@
 				9CF807211DA84C37004ADF2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9CF807221DA84C37004ADF2B /* Build configuration list for PBXNativeTarget "HalaUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +625,7 @@
 				9CF807241DA84C37004ADF2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
