@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -79,12 +78,23 @@
                                     <action selector="getCurrentPlaceWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dL0-NB-yhP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ts-Fe-xo0">
+                                <frame key="frameInset" minX="86" minY="502" width="203" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Fake a location (DEMO ONLY)">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickPlaceWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LHA-9d-Koe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Current Place" image="location_tab" selectedImage="location_tab" id="SbS-J7-ZhI"/>
                     <connections>
                         <outlet property="addressLabel" destination="7NX-Oi-9DM" id="h5d-cU-lLJ"/>
+                        <outlet property="demoButton" destination="5ts-Fe-xo0" id="jnL-0M-Fs2"/>
                         <outlet property="enterButton" destination="PEK-Ij-rmk" id="e6L-j8-Z3M"/>
                         <outlet property="nameLabel" destination="Xbs-Fj-WRO" id="rGk-52-cao"/>
                         <outlet property="placeID" destination="iJK-ns-hot" id="i5R-e1-teC"/>
@@ -92,67 +102,94 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="461.60000000000002" y="-640.02998500749629"/>
+            <point key="canvasLocation" x="561" y="-37"/>
         </scene>
         <!--GeoChat-->
-        <scene sceneID="g4Z-ge-69J">
+        <scene sceneID="agQ-TM-LHq">
             <objects>
-                <tableViewController id="Pk6-Gz-gsh" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="133" sectionHeaderHeight="28" sectionFooterHeight="28" id="Nke-Wh-TsY">
+                <viewController id="asT-IH-zz0" customClass="GeoChat" customModule="Hala" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g4f-0d-rrd"/>
+                        <viewControllerLayoutGuide type="bottom" id="giE-b8-cfG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ub7-U3-PHS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <textField key="tableFooterView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your message here:" textAlignment="natural" minimumFontSize="17" id="soD-oC-PZ5">
-                            <rect key="frame" x="0.0" y="161" width="375" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
-                        </textField>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="133" id="Tet-0W-PA7">
-                                <rect key="frame" x="0.0" y="28" width="375" height="133"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tet-0W-PA7" id="itA-sy-hbI">
-                                    <frame key="frameInset" width="375" height="132"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sjE-qd-Yfv">
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat nec sem ac viverra. Vestibulum volutpat dui sit amet lacus viverra rhoncus. Suspendisse sem mi, commodo nec euismod nec posuere.</string>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qpm-ey-Bsv">
+                                <frame key="frameInset" minY="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="geoMessage" rowHeight="75" id="uUi-5j-36S" customClass="GeoMessageCell" customModule="Hala" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uUi-5j-36S" id="VSr-D7-eIj">
+                                            <frame key="frameInset" width="375" height="74"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Message" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VAd-XA-Jn9">
+                                                    <frame key="frameInset" minX="8" minY="36" width="359" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TimeStamp;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zg8-AM-YU1">
+                                                    <frame key="frameInset" minX="8" minY="8" width="359" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageField" destination="VAd-XA-Jn9" id="4GJ-If-cTM"/>
+                                            <outlet property="timeLabel" destination="zg8-AM-YU1" id="Btm-A3-ohZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="asT-IH-zz0" id="csU-Rp-R6P"/>
+                                    <outlet property="delegate" destination="asT-IH-zz0" id="e6E-Ap-dIX"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OUm-zc-nLH">
+                                <frame key="frameInset" height="44" maxY="603"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" id="80Y-Ja-rtk">
+                                        <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="WCX-cp-a6O">
+                                            <rect key="frame" x="16" y="7" width="315" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SenderID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAd-wa-zC7">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="leadingMargin" secondItem="sjE-qd-Yfv" secondAttribute="leading" id="S6m-bL-BBZ"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="XAd-wa-zC7" secondAttribute="trailing" constant="283" id="YZd-ad-2hO"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="sjE-qd-Yfv" secondAttribute="trailing" id="Z8K-Nd-GcV"/>
-                                        <constraint firstItem="sjE-qd-Yfv" firstAttribute="top" secondItem="itA-sy-hbI" secondAttribute="topMargin" constant="9" id="ZfC-79-3hk"/>
-                                        <constraint firstItem="sjE-qd-Yfv" firstAttribute="top" secondItem="XAd-wa-zC7" secondAttribute="bottom" constant="-4" id="pxl-IS-xuH"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="sjE-qd-Yfv" secondAttribute="bottom" constant="9" id="5Nu-5n-UeF"/>
-                                </constraints>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="Pk6-Gz-gsh" id="Zaa-9i-6py"/>
-                            <outlet property="delegate" destination="Pk6-Gz-gsh" id="3Wi-Px-fp4"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="GeoChat" image="chat_tab" id="C8H-BF-ONp"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hWf-mo-fhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="reply" id="jXQ-fG-srJ">
+                                        <color key="tintColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="sendPressed" destination="asT-IH-zz0" id="ccR-fu-tvs"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="GeoChat" image="chat_tab" id="IES-Ux-jvP"/>
+                    <connections>
+                        <outlet property="tableView" destination="qpm-ey-Bsv" id="lbd-Bm-ZSq"/>
+                        <outlet property="textField" destination="WCX-cp-a6O" id="vq1-xB-bqQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OLL-9u-hjj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-386.39999999999998" y="739.88005997001505"/>
+            <point key="canvasLocation" x="-455" y="768"/>
         </scene>
         <!--GeoPic-->
         <scene sceneID="n1i-N4-eJN">
@@ -248,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="foc-TA-yKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="532" y="33.733133433283363"/>
+            <point key="canvasLocation" x="2337" y="537"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="45k-wv-ak1">
@@ -264,7 +301,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ysZ-um-r7J"/>
-                        <segue destination="Pk6-Gz-gsh" kind="relationship" relationship="viewControllers" id="QYG-6B-ptQ"/>
+                        <segue destination="asT-IH-zz0" kind="relationship" relationship="viewControllers" id="CiL-vo-nbc"/>
                         <segue destination="tq5-7L-eAw" kind="relationship" relationship="viewControllers" id="rzg-lN-1hb"/>
                     </connections>
                 </tabBarController>

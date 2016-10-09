@@ -8,18 +8,22 @@
 
 import UIKit
 import GooglePlaces
-
+import GoogleMaps
+import GooglePlacePicker
 
 
 class ViewController: UIViewController , CLLocationManagerDelegate{
     var  locationManager = CLLocationManager()
     var placesClient: GMSPlacesClient?
+    var placePicker: GMSPlacePicker?
+    let uuid = UUID().uuidString
     
     // Add a pair of UILabels in Interface Builder, and connect the outlets to these variables.
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var placeID: UILabel!
     @IBOutlet var enterButton: UIButton!
+    @IBOutlet var demoButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +42,9 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
     
     // Add a UIButton in Interface Builder, and connect the action to this function.
     @IBAction func getCurrentPlace(sender: UIButton) {
+        guard let tabBar = self.tabBarController?.tabBar else { return }
+        tabBar.items?[1].isEnabled = false;
+        tabBar.items?[2].isEnabled = false;
         placesClient?.currentPlace(callback: {
             (placeLikelihoodList: GMSPlaceLikelihoodList?, error: Error?) -> Void in
             if let error = error {
@@ -62,8 +69,15 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
     }
     
     @IBAction func enterCurrentPlace(sender: UIButton){
-        let uuid = UUID().uuidString
-        let dic: [String : String] = ["sensor":uuid,
+        createLogSensor()
+        let alert = UIAlertController(title: "Welcome to "+self.nameLabel.text!+"!", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "ok!", style: UIAlertActionStyle.default, handler: { action in
+            global.componentID = self.placeID.text!
+            self.activateTab()
+        }))
+        self.present(alert, animated: true, completion: nil)
+        /*let uuid = UUID().uuidString
+        let dic: [String : String] = ["sensor":uuid+self.placeID.text!,
                                       "type":"presence",
                                       "component":self.placeID.text!]
         let dict2 = ["sensors" : [dic]]
@@ -82,14 +96,10 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
                 print(error!.localizedDescription)
             }
             else {
-                let alert = UIAlertController(title: "Welcome to "+self.nameLabel.text!+"!", message: "", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "ok!", style: UIAlertActionStyle.default, handler: { action in
-                    self.activateTab()
-                }))
-                self.present(alert, animated: true, completion: nil)
+         
             }
         }
-        dataTask.resume()
+        dataTask.resume()*/
     }
     
     func activateTab(){
@@ -98,6 +108,92 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
         tabBar.items?[2].isEnabled = true;
         
     }
+    
+    func createLogSensor(){
+        let dic: [String : String] = ["sensor":self.placeID.text!+"-log",
+                                      "type":"presence",
+                                      "dataType":"text",
+                                      "component":self.placeID.text!]
+        let dict2 = ["sensors" : [dic]]
+        let urlString: URL = URL(string: "http://api.sentilo.cloud/catalog/HalaMasterMind")!
+        var request: URLRequest = URLRequest(url: urlString)
+        request.setValue("application/JSON", forHTTPHeaderField: "Accept")
+        request.setValue("application/JSON", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        let data = try! JSONSerialization.data(withJSONObject: dict2, options: JSONSerialization.WritingOptions.prettyPrinted)
+        request.httpBody = data
+        request.setValue("9474d27ab5df36ebdc966d6ff5a2c019cf05c02587df5eedd216e007eb37f8ea", forHTTPHeaderField: "IDENTITY_KEY")
+        
+        let dataTask: URLSessionDataTask = URLSession.shared.dataTask(with: request){data, response, error in
+            if error != nil {
+             
+            }
+        }
+        dataTask.resume()
+        
+      /*  dic = ["sensor":global.componentID+"-footprint",
+                                      "type":"presence",
+                                      "dataType":"text",
+                                      "component":global.componentID]
+        dict2 = ["sensors" : [dic]]
+        request.setValue("application/JSON", forHTTPHeaderField: "Accept")
+        request.setValue("application/JSON", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        data = try! JSONSerialization.data(withJSONObject: dict2, options: JSONSerialization.WritingOptions.prettyPrinted)
+        request.httpBody = data
+        request.setValue("9474d27ab5df36ebdc966d6ff5a2c019cf05c02587df5eedd216e007eb37f8ea", forHTTPHeaderField: "IDENTITY_KEY")
+        
+        dataTask = URLSession.shared.dataTask(with: request){data, response, error in
+        }
+        
+        dataTask.resume()
+        //stepIn()*/
+        
+    }
+    
+    func stepIn(){
+        let urlString = URL(string: "http://api.sentilo.cloud/data/HalaMasterMind/"+global.componentID+"-footprint/"+self.uuid)!
+        var request = URLRequest(url: urlString)
+        request.httpMethod = "PUT"
+        request.setValue("9474d27ab5df36ebdc966d6ff5a2c019cf05c02587df5eedd216e007eb37f8ea", forHTTPHeaderField: "IDENTITY_KEY")
+        
+        let dataTask = URLSession.shared.dataTask(with: request){data, response, error in}
+        dataTask.resume()
+    }
+    
+
+    // The code snippet below shows how to create a GMSPlacePicker
+    // centered on Sydney, and output details of a selected place.
+    @IBAction func pickPlace(sender: UIButton) {
+        guard let tabBar = self.tabBarController?.tabBar else { return }
+        tabBar.items?[1].isEnabled = false;
+        tabBar.items?[2].isEnabled = false;
+        let center = CLLocationCoordinate2DMake(51.5108396, -0.0922251)
+        let northEast = CLLocationCoordinate2DMake(center.latitude + 0.001, center.longitude + 0.001)
+        let southWest = CLLocationCoordinate2DMake(center.latitude - 0.001, center.longitude - 0.001)
+        let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
+        let config = GMSPlacePickerConfig(viewport: viewport)
+        placePicker = GMSPlacePicker(config: config)
+        
+        placePicker?.pickPlace(callback: { (place: GMSPlace?, error: Error?) -> Void in
+            if let error = error {
+                print("Pick Place error: \(error.localizedDescription)")
+                return
+            }
+            
+            if let place = place {
+                self.nameLabel.text = place.name
+                self.addressLabel.text = place.formattedAddress!.components(separatedBy: ", ").joined(separator: "\n")
+                self.placeID.text = place.placeID
+                self.enterButton.isEnabled = true
+            } else {
+                print("No place selected")
+            }
+        })
+    }
+    
+    
+    
     
     func locationManager(_ lm : CLLocationManager, didUpdateLocations locations: [CLLocation]){}
     func locationManager(_ lm : CLLocationManager, didFailWithError error: Error){}

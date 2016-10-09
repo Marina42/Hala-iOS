@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8EE54C9CB97EE88EBFAA2D65 /* libPods-Hala.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98CBFB288CD31B95D3AB4815 /* libPods-Hala.a */; };
 		9C6130B21DA8A07C00B28D43 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6130B11DA8A07C00B28D43 /* TabBarController.swift */; };
 		9CA39A621DA8E5E4002BB85F /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA39A611DA8E5E3002BB85F /* Provider.swift */; };
 		9CA39A641DA8E8B9002BB85F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA39A631DA8E8B9002BB85F /* Profile.swift */; };
@@ -19,6 +18,10 @@
 		9CF807021DA84C37004ADF2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF807001DA84C37004ADF2B /* LaunchScreen.storyboard */; };
 		9CF8070D1DA84C37004ADF2B /* HalaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF8070C1DA84C37004ADF2B /* HalaTests.swift */; };
 		9CF807181DA84C37004ADF2B /* HalaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF807171DA84C37004ADF2B /* HalaUITests.swift */; };
+		9CFACFE61DA9469C00A793A0 /* GeoChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFACFE51DA9469C00A793A0 /* GeoChat.swift */; };
+		9CFACFE81DA95C2000A793A0 /* global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFACFE71DA95C2000A793A0 /* global.swift */; };
+		9CFACFEA1DA98CA100A793A0 /* geoMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFACFE91DA98CA100A793A0 /* geoMessageCell.swift */; };
+		CDDF7869D173385D55076AC6 /* Pods_Hala.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13425E1F740DC79C18D76B4F /* Pods_Hala.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13425E1F740DC79C18D76B4F /* Pods_Hala.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hala.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D2327FE48AE65D39CF1D32B /* Pods-Hala.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hala.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hala/Pods-Hala.debug.xcconfig"; sourceTree = "<group>"; };
-		98CBFB288CD31B95D3AB4815 /* libPods-Hala.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hala.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6130B11DA8A07C00B28D43 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9CA39A611DA8E5E3002BB85F /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		9CA39A631DA8E8B9002BB85F /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -58,6 +61,9 @@
 		9CF807131DA84C37004ADF2B /* HalaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HalaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF807171DA84C37004ADF2B /* HalaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalaUITests.swift; sourceTree = "<group>"; };
 		9CF807191DA84C37004ADF2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CFACFE51DA9469C00A793A0 /* GeoChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoChat.swift; sourceTree = "<group>"; };
+		9CFACFE71DA95C2000A793A0 /* global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = global.swift; sourceTree = "<group>"; };
+		9CFACFE91DA98CA100A793A0 /* geoMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = geoMessageCell.swift; sourceTree = "<group>"; };
 		CDCA6FB1FD8844DD84A03A01 /* Pods-Hala.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hala.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hala/Pods-Hala.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EE54C9CB97EE88EBFAA2D65 /* libPods-Hala.a in Frameworks */,
+				CDDF7869D173385D55076AC6 /* Pods_Hala.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +96,7 @@
 		0ACCFEE717282B0073D6753F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				98CBFB288CD31B95D3AB4815 /* libPods-Hala.a */,
+				13425E1F740DC79C18D76B4F /* Pods_Hala.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -125,7 +131,10 @@
 				9CA39A631DA8E8B9002BB85F /* Profile.swift */,
 				9CA39A611DA8E5E3002BB85F /* Provider.swift */,
 				9CF806F81DA84C37004ADF2B /* Main.storyboard */,
+				9CFACFE71DA95C2000A793A0 /* global.swift */,
+				9CFACFE51DA9469C00A793A0 /* GeoChat.swift */,
 				9C6130B11DA8A07C00B28D43 /* TabBarController.swift */,
+				9CFACFE91DA98CA100A793A0 /* geoMessageCell.swift */,
 				9CF806FE1DA84C37004ADF2B /* Assets.xcassets */,
 				9CF807001DA84C37004ADF2B /* LaunchScreen.storyboard */,
 				9CF807031DA84C37004ADF2B /* Info.plist */,
@@ -238,12 +247,14 @@
 					9CF807071DA84C37004ADF2B = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 37JQGFRVMD;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9CF806F01DA84C37004ADF2B;
 					};
 					9CF807121DA84C37004ADF2B = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 37JQGFRVMD;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9CF806F01DA84C37004ADF2B;
 					};
@@ -349,9 +360,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CFACFEA1DA98CA100A793A0 /* geoMessageCell.swift in Sources */,
+				9CFACFE81DA95C2000A793A0 /* global.swift in Sources */,
 				9CF806F71DA84C37004ADF2B /* ViewController.swift in Sources */,
 				9CA39A641DA8E8B9002BB85F /* Profile.swift in Sources */,
 				9C6130B21DA8A07C00B28D43 /* TabBarController.swift in Sources */,
+				9CFACFE61DA9469C00A793A0 /* GeoChat.swift in Sources */,
 				9CF806F51DA84C37004ADF2B /* AppDelegate.swift in Sources */,
 				9CA39A621DA8E5E4002BB85F /* Provider.swift in Sources */,
 				9CF806FD1DA84C37004ADF2B /* Hala.xcdatamodeld in Sources */,
