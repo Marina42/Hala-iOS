@@ -62,6 +62,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
                     self.nameLabel.text = place.name
                     self.addressLabel.text = place.formattedAddress!.components(separatedBy: ", ").joined(separator: "\n")
                     self.placeID.text = place.placeID
+                    global.componentID = self.placeID.text!
                     self.enterButton.isEnabled = true
                 }
             }
@@ -110,28 +111,28 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
     }
     
     func createLogSensor(){
-        let dic: [String : String] = ["sensor":self.placeID.text!+"-log",
+        var dic: [String : String] = ["sensor":global.componentID+"-log",
                                       "type":"presence",
                                       "dataType":"text",
-                                      "component":self.placeID.text!]
-        let dict2 = ["sensors" : [dic]]
+                                      "component":global.componentID]
+        var dict2 = ["sensors" : [dic]]
         let urlString: URL = URL(string: "http://api.sentilo.cloud/catalog/HalaMasterMind")!
         var request: URLRequest = URLRequest(url: urlString)
         request.setValue("application/JSON", forHTTPHeaderField: "Accept")
         request.setValue("application/JSON", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        let data = try! JSONSerialization.data(withJSONObject: dict2, options: JSONSerialization.WritingOptions.prettyPrinted)
+        var data = try! JSONSerialization.data(withJSONObject: dict2, options: JSONSerialization.WritingOptions.prettyPrinted)
         request.httpBody = data
         request.setValue("9474d27ab5df36ebdc966d6ff5a2c019cf05c02587df5eedd216e007eb37f8ea", forHTTPHeaderField: "IDENTITY_KEY")
         
-        let dataTask: URLSessionDataTask = URLSession.shared.dataTask(with: request){data, response, error in
+        var dataTask: URLSessionDataTask = URLSession.shared.dataTask(with: request){data, response, error in
             if error != nil {
              
             }
         }
         dataTask.resume()
         
-      /*  dic = ["sensor":global.componentID+"-footprint",
+        dic = ["sensor":global.componentID+"-footprint",
                                       "type":"presence",
                                       "dataType":"text",
                                       "component":global.componentID]
@@ -147,17 +148,31 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
         }
         
         dataTask.resume()
-        //stepIn()*/
+        stepIn()
         
     }
     
     func stepIn(){
-        let urlString = URL(string: "http://api.sentilo.cloud/data/HalaMasterMind/"+global.componentID+"-footprint/"+self.uuid)!
-        var request = URLRequest(url: urlString)
+        let dic: [String : String] = ["value":self.uuid]
+        let dict2 = ["observations" : [dic]]
+        
+        let urlString: URL = URL(string: "http://api.sentilo.cloud/data/HalaMasterMind/"+global.componentID+"-footprint")!
+        var request: URLRequest = URLRequest(url: urlString)
+        request.setValue("application/JSON", forHTTPHeaderField: "Accept")
+        request.setValue("application/JSON", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "PUT"
+        let data = try! JSONSerialization.data(withJSONObject: dict2, options: JSONSerialization.WritingOptions.prettyPrinted)
+        request.httpBody = data
         request.setValue("9474d27ab5df36ebdc966d6ff5a2c019cf05c02587df5eedd216e007eb37f8ea", forHTTPHeaderField: "IDENTITY_KEY")
         
-        let dataTask = URLSession.shared.dataTask(with: request){data, response, error in}
+        let dataTask: URLSessionDataTask = URLSession.shared.dataTask(with: request){data, response, error in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            else {
+                
+            }
+        }
         dataTask.resume()
     }
     
