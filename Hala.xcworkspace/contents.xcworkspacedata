@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../HalaCore/HalaCore.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Hala.xcodeproj">
    </FileRef>
    <FileRef

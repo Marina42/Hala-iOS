@@ -10,6 +10,7 @@ import UIKit
 import GooglePlaces
 import GoogleMaps
 import GooglePlacePicker
+import HalaCore
 
 
 class ViewController: UIViewController , CLLocationManagerDelegate{
@@ -27,6 +28,10 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       // let aux = HalaCore()
+        let aux = HalaCore.halaCore
+        aux.test()
+        
         guard let tabBar = self.tabBarController?.tabBar else { return }
         tabBar.unselectedItemTintColor = UIColor.white
         tabBar.items?[1].isEnabled = false;

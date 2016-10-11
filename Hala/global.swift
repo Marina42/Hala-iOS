@@ -7,11 +7,12 @@
 //
 
 class Global {
+    public let global = Global(componentID: "componentID", chatID: "chatId")
     var componentID:String
     var chatID:String
-    init(componentID:String, chatID:String) {
+    private init(componentID:String, chatID:String) {
         self.componentID = componentID
         self.chatID = chatID
     }
 }
-var global = Global(componentID: "componentID",chatID: "chatID")
+//var global = Global(componentID: "componentID",chatID: "chatID")

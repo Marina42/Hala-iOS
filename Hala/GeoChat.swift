@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import Alamofire
 
 class GeoChat : UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var textField: UITextField!
