@@ -10,7 +10,7 @@ import UIKit
 import GooglePlaces
 import GoogleMaps
 import GooglePlacePicker
-import HalaCore
+import Hala
 
 
 class ViewController: UIViewController , CLLocationManagerDelegate{
@@ -18,6 +18,8 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
     var placesClient: GMSPlacesClient?
     var placePicker: GMSPlacePicker?
     let uuid = UUID().uuidString
+    let global = Global.global
+    let halaCore = Hala.core
     
     // Add a pair of UILabels in Interface Builder, and connect the outlets to these variables.
     @IBOutlet var nameLabel: UILabel!
@@ -29,8 +31,8 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
        // let aux = HalaCore()
-        let aux = HalaCore.halaCore
-        aux.test()
+        let place = halaCore.getActualPlace()
+        print(place.getName())
         
         guard let tabBar = self.tabBarController?.tabBar else { return }
         tabBar.unselectedItemTintColor = UIColor.white
@@ -67,7 +69,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
                     self.nameLabel.text = place.name
                     self.addressLabel.text = place.formattedAddress!.components(separatedBy: ", ").joined(separator: "\n")
                     self.placeID.text = place.placeID
-                    global.componentID = self.placeID.text!
+                    self.global.componentID = self.placeID.text!
                     self.enterButton.isEnabled = true
                 }
             }
@@ -78,7 +80,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
         createLogSensor()
         let alert = UIAlertController(title: "Welcome to "+self.nameLabel.text!+"!", message: "", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "ok!", style: UIAlertActionStyle.default, handler: { action in
-            global.componentID = self.placeID.text!
+            self.global.componentID = self.placeID.text!
             self.activateTab()
         }))
         self.present(alert, animated: true, completion: nil)

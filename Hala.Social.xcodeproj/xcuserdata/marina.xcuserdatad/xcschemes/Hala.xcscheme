@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9CF806F01DA84C37004ADF2B"
-               BuildableName = "Hala.app"
-               BlueprintName = "Hala"
-               ReferencedContainer = "container:Hala.xcodeproj">
+               BuildableName = "Hala.Social.app"
+               BlueprintName = "Hala.Social"
+               ReferencedContainer = "container:Hala.Social.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "9CF807071DA84C37004ADF2B"
                BuildableName = "HalaTests.xctest"
                BlueprintName = "HalaTests"
-               ReferencedContainer = "container:Hala.xcodeproj">
+               ReferencedContainer = "container:Hala.Social.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "9CF807121DA84C37004ADF2B"
                BuildableName = "HalaUITests.xctest"
                BlueprintName = "HalaUITests"
-               ReferencedContainer = "container:Hala.xcodeproj">
+               ReferencedContainer = "container:Hala.Social.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9CF806F01DA84C37004ADF2B"
-            BuildableName = "Hala.app"
-            BlueprintName = "Hala"
-            ReferencedContainer = "container:Hala.xcodeproj">
+            BuildableName = "Hala.Social.app"
+            BlueprintName = "Hala.Social"
+            ReferencedContainer = "container:Hala.Social.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9CF806F01DA84C37004ADF2B"
-            BuildableName = "Hala.app"
-            BlueprintName = "Hala"
-            ReferencedContainer = "container:Hala.xcodeproj">
+            BuildableName = "Hala.Social.app"
+            BlueprintName = "Hala.Social"
+            ReferencedContainer = "container:Hala.Social.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9CF806F01DA84C37004ADF2B"
-            BuildableName = "Hala.app"
-            BlueprintName = "Hala"
-            ReferencedContainer = "container:Hala.xcodeproj">
+            BuildableName = "Hala.Social.app"
+            BlueprintName = "Hala.Social"
+            ReferencedContainer = "container:Hala.Social.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

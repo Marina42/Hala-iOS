@@ -14,6 +14,7 @@ class GeoChat : UIViewController, UITextFieldDelegate, UITableViewDelegate, UITa
     @IBOutlet var tableView: UITableView!
     var geoTimeLog: [String]!
     var geoMessLog: [String]!
+    let global = Global.global
     
     override func viewDidLoad() {
         super.viewDidLoad()

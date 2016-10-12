@@ -9,9 +9,8 @@
 /* Begin PBXBuildFile section */
 		9C6130B21DA8A07C00B28D43 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6130B11DA8A07C00B28D43 /* TabBarController.swift */; };
 		9CA39A621DA8E5E4002BB85F /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA39A611DA8E5E3002BB85F /* Provider.swift */; };
-		9CA39A641DA8E8B9002BB85F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA39A631DA8E8B9002BB85F /* Profile.swift */; };
-		9CD1F2071DABDEDA0092CA32 /* HalaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD1F2061DABDEDA0092CA32 /* HalaCore.framework */; };
-		9CD1F2081DABDEDA0092CA32 /* HalaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD1F2061DABDEDA0092CA32 /* HalaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9CB7A72D1DACFB80000CC237 /* Hala.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB7A72C1DACFB80000CC237 /* Hala.framework */; };
+		9CB7A72E1DACFB80000CC237 /* Hala.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB7A72C1DACFB80000CC237 /* Hala.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CF806F51DA84C37004ADF2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF806F41DA84C37004ADF2B /* AppDelegate.swift */; };
 		9CF806F71DA84C37004ADF2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF806F61DA84C37004ADF2B /* ViewController.swift */; };
 		9CF806FA1DA84C37004ADF2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF806F81DA84C37004ADF2B /* Main.storyboard */; };
@@ -25,13 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9CD1F2051DABD6940092CA32 /* Embed Frameworks */ = {
+		9CB7A72F1DACFB80000CC237 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9CD1F2081DABDEDA0092CA32 /* HalaCore.framework in Embed Frameworks */,
+				9CB7A72E1DACFB80000CC237 /* Hala.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,9 +42,9 @@
 		6D2327FE48AE65D39CF1D32B /* Pods-Hala.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hala.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hala/Pods-Hala.debug.xcconfig"; sourceTree = "<group>"; };
 		9C6130B11DA8A07C00B28D43 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9CA39A611DA8E5E3002BB85F /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
-		9CA39A631DA8E8B9002BB85F /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		9CB7A72C1DACFB80000CC237 /* Hala.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Hala.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD1F2061DABDEDA0092CA32 /* HalaCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HalaCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CF806F11DA84C37004ADF2B /* Hala.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hala.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CF806F11DA84C37004ADF2B /* Hala.Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hala.Social.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF806F41DA84C37004ADF2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CF806F61DA84C37004ADF2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9CF806F91DA84C37004ADF2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,8 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CB7A72D1DACFB80000CC237 /* Hala.framework in Frameworks */,
 				CDDF7869D173385D55076AC6 /* Pods_Hala.framework in Frameworks */,
-				9CD1F2071DABDEDA0092CA32 /* HalaCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +83,7 @@
 		9CF806E81DA84C37004ADF2B = {
 			isa = PBXGroup;
 			children = (
+				9CB7A72C1DACFB80000CC237 /* Hala.framework */,
 				9CF806F31DA84C37004ADF2B /* Hala */,
 				9CF806F21DA84C37004ADF2B /* Products */,
 				BD4DB21AC7F1A51C6D0C79C2 /* Pods */,
@@ -94,7 +94,7 @@
 		9CF806F21DA84C37004ADF2B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9CF806F11DA84C37004ADF2B /* Hala.app */,
+				9CF806F11DA84C37004ADF2B /* Hala.Social.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,7 +104,6 @@
 			children = (
 				9CF806F41DA84C37004ADF2B /* AppDelegate.swift */,
 				9CF806F61DA84C37004ADF2B /* ViewController.swift */,
-				9CA39A631DA8E8B9002BB85F /* Profile.swift */,
 				9CA39A611DA8E5E3002BB85F /* Provider.swift */,
 				9CF806F81DA84C37004ADF2B /* Main.storyboard */,
 				9CFACFE71DA95C2000A793A0 /* global.swift */,
@@ -131,9 +130,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9CF806F01DA84C37004ADF2B /* Hala */ = {
+		9CF806F01DA84C37004ADF2B /* Hala.Social */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9CF8071C1DA84C37004ADF2B /* Build configuration list for PBXNativeTarget "Hala" */;
+			buildConfigurationList = 9CF8071C1DA84C37004ADF2B /* Build configuration list for PBXNativeTarget "Hala.Social" */;
 			buildPhases = (
 				6E28E6327AE9DFCBCC0E4C9A /* [CP] Check Pods Manifest.lock */,
 				9CF806ED1DA84C37004ADF2B /* Sources */,
@@ -141,15 +140,15 @@
 				9CF806EF1DA84C37004ADF2B /* Resources */,
 				562936582D1A0C345C24449E /* [CP] Embed Pods Frameworks */,
 				7F845D8F7AEACEB577E2EA65 /* [CP] Copy Pods Resources */,
-				9CD1F2051DABD6940092CA32 /* Embed Frameworks */,
+				9CB7A72F1DACFB80000CC237 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Hala;
+			name = Hala.Social;
 			productName = Hala;
-			productReference = 9CF806F11DA84C37004ADF2B /* Hala.app */;
+			productReference = 9CF806F11DA84C37004ADF2B /* Hala.Social.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -160,16 +159,16 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = "Mariwi Tech";
+				ORGANIZATIONNAME = Hala;
 				TargetAttributes = {
 					9CF806F01DA84C37004ADF2B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 37JQGFRVMD;
+						DevelopmentTeam = 23X7H782YL;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 9CF806EC1DA84C37004ADF2B /* Build configuration list for PBXProject "Hala" */;
+			buildConfigurationList = 9CF806EC1DA84C37004ADF2B /* Build configuration list for PBXProject "Hala.Social" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -182,7 +181,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9CF806F01DA84C37004ADF2B /* Hala */,
+				9CF806F01DA84C37004ADF2B /* Hala.Social */,
 			);
 		};
 /* End PBXProject section */
@@ -256,7 +255,6 @@
 				9CFACFEA1DA98CA100A793A0 /* geoMessageCell.swift in Sources */,
 				9CFACFE81DA95C2000A793A0 /* global.swift in Sources */,
 				9CF806F71DA84C37004ADF2B /* ViewController.swift in Sources */,
-				9CA39A641DA8E8B9002BB85F /* Profile.swift in Sources */,
 				9C6130B21DA8A07C00B28D43 /* TabBarController.swift in Sources */,
 				9CFACFE61DA9469C00A793A0 /* GeoChat.swift in Sources */,
 				9CF806F51DA84C37004ADF2B /* AppDelegate.swift in Sources */,
@@ -384,16 +382,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6D2327FE48AE65D39CF1D32B /* Pods-Hala.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 37JQGFRVMD;
+				DEVELOPMENT_TEAM = 23X7H782YL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Hala/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mariwi-tech.Hala";
+				PRODUCT_BUNDLE_IDENTIFIER = com.halaworldsenses.Hala;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -403,16 +400,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CDCA6FB1FD8844DD84A03A01 /* Pods-Hala.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 37JQGFRVMD;
+				DEVELOPMENT_TEAM = 23X7H782YL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Hala/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mariwi-tech.Hala";
+				PRODUCT_BUNDLE_IDENTIFIER = com.halaworldsenses.Hala;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -421,7 +417,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9CF806EC1DA84C37004ADF2B /* Build configuration list for PBXProject "Hala" */ = {
+		9CF806EC1DA84C37004ADF2B /* Build configuration list for PBXProject "Hala.Social" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9CF8071A1DA84C37004ADF2B /* Debug */,
@@ -430,7 +426,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9CF8071C1DA84C37004ADF2B /* Build configuration list for PBXNativeTarget "Hala" */ = {
+		9CF8071C1DA84C37004ADF2B /* Build configuration list for PBXNativeTarget "Hala.Social" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9CF8071D1DA84C37004ADF2B /* Debug */,
