@@ -214,12 +214,156 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hala/ViewController.swift"
-            timestampString = "497902503.258125"
+            timestampString = "497963229.258056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "createLogSensor()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Hala-Core-iOS/HalaCore/HalaPlaceManager.swift"
+            timestampString = "497959357.863331"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "HalaPlaceManager"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Hala-Core-iOS/HalaCore/HalaPlaceManager.swift"
+            timestampString = "497959778.969699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "findActualPlace()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Hala-Core-iOS/HalaCore/HalaPlaceManager.swift"
+            timestampString = "497959778.969699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "findActualPlace()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hala.HalaPlaceManager.findActualPlace () -&gt; ()"
+                  moduleName = "Hala"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marina/Desktop/Hala/repo/Hala/Hala-Core-iOS/HalaCore/HalaPlaceManager.swift"
+                  timestampString = "497959986.258785"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hala.HalaPlaceManager.(findActualPlace () -&gt; ()).(closure #1)"
+                  moduleName = "Hala"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marina/Desktop/Hala/repo/Hala/Hala-Core-iOS/HalaCore/HalaPlaceManager.swift"
+                  timestampString = "497959986.261781"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Hala-Core-iOS/HalaCore/HalaPlaceManager.swift"
+            timestampString = "497959778.969699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "findActualPlace()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hala.HalaPlaceManager.(findActualPlace () -&gt; ()).(closure #1)"
+                  moduleName = "Hala"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marina/Desktop/Hala/repo/Hala/Hala-Core-iOS/HalaCore/HalaPlaceManager.swift"
+                  timestampString = "497959986.267694"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "472">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hala.HalaPlaceManager.(findActualPlace () -&gt; ()).(closure #1)"
+                  moduleName = "Hala"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marina/Desktop/Hala/repo/Hala/Hala-Core-iOS/HalaCore/HalaPlaceManager.swift"
+                  timestampString = "497959986.270811"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "504">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Hala-Core-iOS/HalaCore/HalaPlaceManager.swift"
+            timestampString = "497959778.969699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "findActualPlace()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

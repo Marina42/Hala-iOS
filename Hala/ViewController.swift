@@ -13,13 +13,14 @@ import GooglePlacePicker
 import Hala
 
 
-class ViewController: UIViewController , CLLocationManagerDelegate{
+class ViewController: UIViewController , CLLocationManagerDelegate, HalaCoreDelegate{
     var  locationManager = CLLocationManager()
     var placesClient: GMSPlacesClient?
     var placePicker: GMSPlacePicker?
     let uuid = UUID().uuidString
     let global = Global.global
     let halaCore = Hala.core
+    var myPlace: HalaPlace?
     
     // Add a pair of UILabels in Interface Builder, and connect the outlets to these variables.
     @IBOutlet var nameLabel: UILabel!
@@ -30,9 +31,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // let aux = HalaCore()
-        let place = halaCore.getActualPlace()
-        print(place.getName())
+        halaCore.delegate = self
         
         guard let tabBar = self.tabBarController?.tabBar else { return }
         tabBar.unselectedItemTintColor = UIColor.white
@@ -47,33 +46,17 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
         placesClient = GMSPlacesClient.shared()
     }
     
-    // Add a UIButton in Interface Builder, and connect the action to this function.
+    func halaPlaceIsReady(place: HalaPlace){
+        self.myPlace = place
+        self.nameLabel.text = place.getName()
+        self.addressLabel.text = place.getAddress()
+        self.placeID.text = place.getGpid()
+        self.global.componentID = place.getGpid()
+        self.enterButton.isEnabled = true
+    }
+    
     @IBAction func getCurrentPlace(sender: UIButton) {
-        guard let tabBar = self.tabBarController?.tabBar else { return }
-        tabBar.items?[1].isEnabled = false;
-        tabBar.items?[2].isEnabled = false;
-        placesClient?.currentPlace(callback: {
-            (placeLikelihoodList: GMSPlaceLikelihoodList?, error: Error?) -> Void in
-            if let error = error {
-                print("Pick Place error: \(error.localizedDescription)")
-                return
-            }
-            
-            self.nameLabel.text = "No current place"
-            self.addressLabel.text = ""
-            self.placeID.text = ""
-            
-            if let placeLikelihoodList = placeLikelihoodList {
-                let place = placeLikelihoodList.likelihoods.first?.place
-                if let place = place {
-                    self.nameLabel.text = place.name
-                    self.addressLabel.text = place.formattedAddress!.components(separatedBy: ", ").joined(separator: "\n")
-                    self.placeID.text = place.placeID
-                    self.global.componentID = self.placeID.text!
-                    self.enterButton.isEnabled = true
-                }
-            }
-        } )
+        halaCore.getActualPlace()
     }
     
     @IBAction func enterCurrentPlace(sender: UIButton){
@@ -140,7 +123,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
         dataTask.resume()
         
         dic = ["sensor":global.componentID+"-footprint",
-                                      "type":"presence",
+                                      "type":"people-flow",
                                       "dataType":"text",
                                       "component":global.componentID]
         dict2 = ["sensors" : [dic]]
