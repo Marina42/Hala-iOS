@@ -59,6 +59,11 @@ class ViewController: UIViewController , CLLocationManagerDelegate, HalaCoreDele
         halaCore.getActualPlace()
     }
     
+    func didEnterPlace(code: Error){
+        
+    }
+    
+    
     @IBAction func enterCurrentPlace(sender: UIButton){
         createLogSensor()
         let alert = UIAlertController(title: "Welcome to "+self.nameLabel.text!+"!", message: "", preferredStyle: UIAlertControllerStyle.alert)
@@ -67,30 +72,6 @@ class ViewController: UIViewController , CLLocationManagerDelegate, HalaCoreDele
             self.activateTab()
         }))
         self.present(alert, animated: true, completion: nil)
-        /*let uuid = UUID().uuidString
-        let dic: [String : String] = ["sensor":uuid+self.placeID.text!,
-                                      "type":"presence",
-                                      "component":self.placeID.text!]
-        let dict2 = ["sensors" : [dic]]
-        
-        let urlString: URL = URL(string: "http://api.sentilo.cloud/catalog/HalaMasterMind")!
-        var request: URLRequest = URLRequest(url: urlString)
-        request.setValue("application/JSON", forHTTPHeaderField: "Accept")
-        request.setValue("application/JSON", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
-        let data = try! JSONSerialization.data(withJSONObject: dict2, options: JSONSerialization.WritingOptions.prettyPrinted)
-        request.httpBody = data
-        request.setValue("9474d27ab5df36ebdc966d6ff5a2c019cf05c02587df5eedd216e007eb37f8ea", forHTTPHeaderField: "IDENTITY_KEY")
-        
-        let dataTask: URLSessionDataTask = URLSession.shared.dataTask(with: request){data, response, error in
-            if error != nil {
-                print(error!.localizedDescription)
-            }
-            else {
-         
-            }
-        }
-        dataTask.resume()*/
     }
     
     func activateTab(){

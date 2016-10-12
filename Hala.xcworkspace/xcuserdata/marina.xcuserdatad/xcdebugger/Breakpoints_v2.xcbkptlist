@@ -214,11 +214,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hala/ViewController.swift"
-            timestampString = "497963229.258056"
+            timestampString = "497964481.374234"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "createLogSensor()"
             landmarkType = "7">
          </BreakpointContent>

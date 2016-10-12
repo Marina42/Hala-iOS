@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "29AC986C5677B3A0C7DBA705CF0C638E9E79A170",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A88C441AF36ACEA2A480A49A49282EABEC2A1DE2" : 9223372036854775807,
+    "AC838E7DEC137962DC9949ABA6882AB46C3B1223" : 9223372036854775807,
+    "29AC986C5677B3A0C7DBA705CF0C638E9E79A170" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E0BE61FC-60AB-488F-9DAD-6BC906F5FC7D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A88C441AF36ACEA2A480A49A49282EABEC2A1DE2" : "",
+    "AC838E7DEC137962DC9949ABA6882AB46C3B1223" : "Hala-Core-iOS\/",
+    "29AC986C5677B3A0C7DBA705CF0C638E9E79A170" : "Hala-iOS\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Hala",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Hala.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Marina42\/Hala-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "29AC986C5677B3A0C7DBA705CF0C638E9E79A170"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Marina42\/Hala.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A88C441AF36ACEA2A480A49A49282EABEC2A1DE2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Marina42\/Hala-Core-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AC838E7DEC137962DC9949ABA6882AB46C3B1223"
+    }
+  ]
+}
