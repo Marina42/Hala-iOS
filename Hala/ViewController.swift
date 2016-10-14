@@ -59,12 +59,14 @@ class ViewController: UIViewController , CLLocationManagerDelegate, HalaCoreDele
         halaCore.getActualPlace()
     }
     
-    func didEnterPlace(code: Error){
+    func didEnterHalaPlace(){
         
     }
     
-    
     @IBAction func enterCurrentPlace(sender: UIButton){
+        halaCore.enterActualPlace()
+        
+        
         createLogSensor()
         let alert = UIAlertController(title: "Welcome to "+self.nameLabel.text!+"!", message: "", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "ok!", style: UIAlertActionStyle.default, handler: { action in
