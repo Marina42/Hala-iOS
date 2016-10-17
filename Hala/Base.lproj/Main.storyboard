@@ -9,7 +9,7 @@
         <!--Current Place-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hala_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hala_Social" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -78,24 +78,26 @@
                                     <action selector="getCurrentPlaceWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dL0-NB-yhP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ts-Fe-xo0">
-                                <frame key="frameInset" minX="86" minY="502" width="203" height="30"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="pTp-pj-hnY">
+                                <frame key="frameInset" minX="177" minY="509" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Fake a location (DEMO ONLY)">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="pickPlaceWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LHA-9d-Koe"/>
-                                </connections>
-                            </button>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6A-q3-0cP">
+                                <frame key="frameInset" minX="134" minY="480" width="107" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Current Place" image="location_tab" selectedImage="location_tab" id="SbS-J7-ZhI"/>
                     <connections>
+                        <outlet property="LoadingIndicator" destination="pTp-pj-hnY" id="xXX-W3-n5u"/>
                         <outlet property="addressLabel" destination="7NX-Oi-9DM" id="h5d-cU-lLJ"/>
-                        <outlet property="demoButton" destination="5ts-Fe-xo0" id="jnL-0M-Fs2"/>
                         <outlet property="enterButton" destination="PEK-Ij-rmk" id="e6L-j8-Z3M"/>
+                        <outlet property="loadingPlaceLabel" destination="U6A-q3-0cP" id="vPa-oY-WwY"/>
                         <outlet property="nameLabel" destination="Xbs-Fj-WRO" id="rGk-52-cao"/>
                         <outlet property="placeID" destination="iJK-ns-hot" id="i5R-e1-teC"/>
                     </connections>
@@ -107,7 +109,7 @@
         <!--GeoChat-->
         <scene sceneID="agQ-TM-LHq">
             <objects>
-                <viewController id="asT-IH-zz0" customClass="GeoChat" customModule="Hala_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="asT-IH-zz0" customClass="GeoChat" customModule="Hala_Social" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g4f-0d-rrd"/>
                         <viewControllerLayoutGuide type="bottom" id="giE-b8-cfG"/>
@@ -122,7 +124,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="geoMessage" rowHeight="75" id="uUi-5j-36S" customClass="GeoMessageCell" customModule="Hala_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="geoMessage" rowHeight="75" id="uUi-5j-36S" customClass="GeoMessageCell" customModule="Hala_Social" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uUi-5j-36S" id="VSr-D7-eIj">
@@ -229,7 +231,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="45k-wv-ak1">
             <objects>
-                <tabBarController id="iP5-7b-ljy" customClass="TabBarController" customModule="Hala_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="iP5-7b-ljy" customClass="TabBarController" customModule="Hala_Social" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="lmN-Qh-sgc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
