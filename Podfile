@@ -6,4 +6,5 @@ target 'Hala' do
 	pod 'GooglePlaces'
 	#pod 'GoogleMaps'
 	pod 'Alamofire', '~> 4.0'
+
 end
