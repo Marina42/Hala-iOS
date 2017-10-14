@@ -68,14 +68,14 @@ class GeoChat : UIViewController, UITextFieldDelegate, UITableViewDelegate, UITa
         let dic: [String : String] = ["value":self.textField.text!]
         let dict2 = ["observations" : [dic]]
         
-        let urlString: URL = URL(string: "http://api.sentilo.cloud/data/HalaMasterMind/"+global.componentID+"-log")!
+        let urlString: URL = URL(string: "http://api.thingtia.cloud/data/HalaMasterMind/"+global.componentID+"-log")!
         var request: URLRequest = URLRequest(url: urlString)
         request.setValue("application/JSON", forHTTPHeaderField: "Accept")
         request.setValue("application/JSON", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "PUT"
         let data = try! JSONSerialization.data(withJSONObject: dict2, options: JSONSerialization.WritingOptions.prettyPrinted)
         request.httpBody = data
-        request.setValue("9474d27ab5df36ebdc966d6ff5a2c019cf05c02587df5eedd216e007eb37f8ea", forHTTPHeaderField: "IDENTITY_KEY")
+        request.setValue(token, forHTTPHeaderField: "IDENTITY_KEY")
         
         let dataTask: URLSessionDataTask = URLSession.shared.dataTask(with: request){data, response, error in
             if error != nil {
@@ -95,10 +95,10 @@ class GeoChat : UIViewController, UITextFieldDelegate, UITableViewDelegate, UITa
         var newString = aString.replacingOccurrences(of: " ", with: "_")
         newString = newString.replacingOccurrences(of: "?", with: "~")
         
-        let urlString: URL = URL(string: "http://api.sentilo.cloud/data/HalaMasterMind/"+global.componentID+"-log/"+newString)!
+        let urlString: URL = URL(string: "http://api.thingtia.cloud/data/HalaMasterMind/"+global.componentID+"-log/"+newString)!
         var request: URLRequest = URLRequest(url: urlString)
         request.httpMethod = "PUT"
-        request.setValue("9474d27ab5df36ebdc966d6ff5a2c019cf05c02587df5eedd216e007eb37f8ea", forHTTPHeaderField: "IDENTITY_KEY")
+        request.setValue(token, forHTTPHeaderField: "IDENTITY_KEY")
         
         let dataTask: URLSessionDataTask = URLSession.shared.dataTask(with: request){data, response, error in
         }
@@ -108,10 +108,10 @@ class GeoChat : UIViewController, UITextFieldDelegate, UITableViewDelegate, UITa
     }
     
     func getMessages(){
-        let url: URL = URL(string: "http://api.sentilo.cloud/data/HalaMasterMind/"+global.componentID+"-log?limit=20")!
+        let url: URL = URL(string: "http://api.thingtia.cloud/data/HalaMasterMind/"+global.componentID+"-log?limit=20")!
         
         var urlRequest = URLRequest(url: url)
-        urlRequest.setValue("9474d27ab5df36ebdc966d6ff5a2c019cf05c02587df5eedd216e007eb37f8ea", forHTTPHeaderField: "IDENTITY_KEY")
+        urlRequest.setValue(token, forHTTPHeaderField: "IDENTITY_KEY")
         
         // set up the session
         let config = URLSessionConfiguration.default
@@ -141,12 +141,14 @@ class GeoChat : UIViewController, UITextFieldDelegate, UITableViewDelegate, UITa
                 
                 self.geoMessLog = [String]()
                 self.geoTimeLog = [String]()
-                
-                for log in aux! {
-                    let geo = log as! [String : String]
-                    self.geoTimeLog.append(geo["timestamp"]!)
-                    self.geoMessLog.append(geo["value"]!)
-                }
+				
+				if let log = aux {
+					for data in log {
+						let geo = data as! [String : String]
+						self.geoTimeLog.append(geo["timestamp"]!)
+						self.geoMessLog.append(geo["value"]!)
+					}
+				}
 
                 DispatchQueue.main.async{
                     self.tableView.reloadData()

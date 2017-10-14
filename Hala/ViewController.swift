@@ -15,7 +15,7 @@ import GooglePlacePicker
 class ViewController: UIViewController , CLLocationManagerDelegate{
     var  locationManager = CLLocationManager()
     var placesClient: GMSPlacesClient?
-    var placePicker: GMSPlacePicker?
+   // var placePicker: GMSPlacePicker?
     let uuid = UUID().uuidString
     
     // Add a pair of UILabels in Interface Builder, and connect the outlets to these variables.
@@ -116,14 +116,14 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
                                       "dataType":"text",
                                       "component":global.componentID]
         var dict2 = ["sensors" : [dic]]
-        let urlString: URL = URL(string: "http://api.sentilo.cloud/catalog/HalaMasterMind")!
+        let urlString: URL = URL(string: "http://api.thingtia.cloud/catalog/HalaMasterMind")!
         var request: URLRequest = URLRequest(url: urlString)
         request.setValue("application/JSON", forHTTPHeaderField: "Accept")
         request.setValue("application/JSON", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         var data = try! JSONSerialization.data(withJSONObject: dict2, options: JSONSerialization.WritingOptions.prettyPrinted)
         request.httpBody = data
-        request.setValue("9474d27ab5df36ebdc966d6ff5a2c019cf05c02587df5eedd216e007eb37f8ea", forHTTPHeaderField: "IDENTITY_KEY")
+        request.setValue(token, forHTTPHeaderField: "IDENTITY_KEY")
         
         var dataTask: URLSessionDataTask = URLSession.shared.dataTask(with: request){data, response, error in
             if error != nil {
@@ -142,7 +142,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
         request.httpMethod = "POST"
         data = try! JSONSerialization.data(withJSONObject: dict2, options: JSONSerialization.WritingOptions.prettyPrinted)
         request.httpBody = data
-        request.setValue("9474d27ab5df36ebdc966d6ff5a2c019cf05c02587df5eedd216e007eb37f8ea", forHTTPHeaderField: "IDENTITY_KEY")
+        request.setValue(token, forHTTPHeaderField: "IDENTITY_KEY")
         
         dataTask = URLSession.shared.dataTask(with: request){data, response, error in
         }
@@ -156,14 +156,14 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
         let dic: [String : String] = ["value":self.uuid]
         let dict2 = ["observations" : [dic]]
         
-        let urlString: URL = URL(string: "http://api.sentilo.cloud/data/HalaMasterMind/"+global.componentID+"-footprint")!
+        let urlString: URL = URL(string: "http://api.thingtia.cloud/data/HalaMasterMind/"+global.componentID+"-footprint")!
         var request: URLRequest = URLRequest(url: urlString)
         request.setValue("application/JSON", forHTTPHeaderField: "Accept")
         request.setValue("application/JSON", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "PUT"
         let data = try! JSONSerialization.data(withJSONObject: dict2, options: JSONSerialization.WritingOptions.prettyPrinted)
         request.httpBody = data
-        request.setValue("9474d27ab5df36ebdc966d6ff5a2c019cf05c02587df5eedd216e007eb37f8ea", forHTTPHeaderField: "IDENTITY_KEY")
+        request.setValue(token, forHTTPHeaderField: "IDENTITY_KEY")
         
         let dataTask: URLSessionDataTask = URLSession.shared.dataTask(with: request){data, response, error in
             if error != nil {
@@ -180,7 +180,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
     // The code snippet below shows how to create a GMSPlacePicker
     // centered on Sydney, and output details of a selected place.
     @IBAction func pickPlace(sender: UIButton) {
-        guard let tabBar = self.tabBarController?.tabBar else { return }
+    /*    guard let tabBar = self.tabBarController?.tabBar else { return }
         tabBar.items?[1].isEnabled = false;
         tabBar.items?[2].isEnabled = false;
         let center = CLLocationCoordinate2DMake(51.5108396, -0.0922251)
@@ -204,7 +204,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate{
             } else {
                 print("No place selected")
             }
-        })
+        })*/
     }
     
     
