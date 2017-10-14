@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 import GooglePlaces
-import GoogleMaps
+//import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

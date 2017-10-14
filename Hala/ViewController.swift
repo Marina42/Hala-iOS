@@ -8,8 +8,8 @@
 
 import UIKit
 import GooglePlaces
-import GoogleMaps
-import GooglePlacePicker
+//import GoogleMaps
+//import GooglePlacePicker
 
 
 class ViewController: UIViewController , CLLocationManagerDelegate{

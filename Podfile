@@ -4,6 +4,6 @@ use_frameworks!
 
 target 'Hala' do
 	pod 'GooglePlaces'
-	pod 'GoogleMaps'
+	#pod 'GoogleMaps'
 	pod 'Alamofire', '~> 4.0'
 end
